@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Task.EncapsulationDemo1</StartupObject>
+    <StartupObject>Task.AbstractionDemo</StartupObject>
   </PropertyGroup>
 
 </Project>
