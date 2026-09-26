@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\deepa\\source\\repos\\SampleProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{16716FF8-D267-41EA-ACFA-1BD5604C756E}|SampleProject\\SampleProject.csproj|c:\\users\\deepa\\source\\repos\\sampleproject\\sampleproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16716FF8-D267-41EA-ACFA-1BD5604C756E}|SampleProject\\SampleProject.csproj|solutionrelative:sampleproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16716FF8-D267-41EA-ACFA-1BD5604C756E}|SampleProject\\SampleProject.csproj|c:\\users\\deepa\\source\\repos\\sampleproject\\sampleproject\\swapvariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16716FF8-D267-41EA-ACFA-1BD5604C756E}|SampleProject\\SampleProject.csproj|solutionrelative:sampleproject\\swapvariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SwapVariable.cs",
+              "DocumentMoniker": "C:\\Users\\deepa\\source\\repos\\SampleProject\\SampleProject\\SwapVariable.cs",
+              "RelativeDocumentMoniker": "SampleProject\\SwapVariable.cs",
+              "ToolTip": "C:\\Users\\deepa\\source\\repos\\SampleProject\\SampleProject\\SwapVariable.cs",
+              "RelativeToolTip": "SampleProject\\SwapVariable.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-09T06:55:19.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\deepa\\source\\repos\\SampleProject\\SampleProject\\Program.cs",
+              "RelativeDocumentMoniker": "SampleProject\\Program.cs",
+              "ToolTip": "C:\\Users\\deepa\\source\\repos\\SampleProject\\SampleProject\\Program.cs",
+              "RelativeToolTip": "SampleProject\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T17:17:52.557Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

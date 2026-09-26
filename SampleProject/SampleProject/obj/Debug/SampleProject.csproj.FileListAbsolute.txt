@@ -1,0 +1,7 @@
+C:\Users\deepa\source\repos\SampleProject\SampleProject\bin\Debug\SampleProject.exe.config
+C:\Users\deepa\source\repos\SampleProject\SampleProject\bin\Debug\SampleProject.exe
+C:\Users\deepa\source\repos\SampleProject\SampleProject\bin\Debug\SampleProject.pdb
+C:\Users\deepa\source\repos\SampleProject\SampleProject\obj\Debug\SampleProject.csproj.AssemblyReference.cache
+C:\Users\deepa\source\repos\SampleProject\SampleProject\obj\Debug\SampleProject.csproj.CoreCompileInputs.cache
+C:\Users\deepa\source\repos\SampleProject\SampleProject\obj\Debug\SampleProject.exe
+C:\Users\deepa\source\repos\SampleProject\SampleProject\obj\Debug\SampleProject.pdb
