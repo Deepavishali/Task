@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Task.ExceptionHandling1</StartupObject>
+    <StartupObject>Task.InvoiceGenerator</StartupObject>
   </PropertyGroup>
 
 </Project>
