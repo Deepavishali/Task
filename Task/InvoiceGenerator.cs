@@ -29,6 +29,7 @@ namespace Task
             invoice.AppendLine($"{p1Name,-12} {p1Qty,-5} {p1Price,-6} {t1}");
             invoice.AppendLine($"{p2Name,-12} {p2Qty,-5} {p2Price,-6} {t2}");
             invoice.AppendLine($"{p3Name,-12} {p3Qty,-5} {p3Price,-6} {t3}");
+// The number -12,-5 and -6 are for text alignment
             invoice.AppendLine("------------------------------------");
             invoice.AppendLine($"SubTotal:  {subtotal}");
             invoice.AppendLine($"GST 18% :   {gst}");
