@@ -13,7 +13,7 @@ class Program
         do
         {
             Console.Clear();
-            Console.WriteLine("===== Employee File Management =====");
+            Console.WriteLine("================ Employee File Management================");
             Console.WriteLine("1. Create/Write Employees");
             Console.WriteLine("2. Display Employees");
             Console.WriteLine("3. Add Employee");
@@ -23,11 +23,11 @@ class Program
             Console.WriteLine("7. File Information");
             Console.WriteLine("8. Delete File");
             Console.WriteLine("9. Exit");
-            Console.Write("\nEnter your choice: ");
+            Console.WriteLine("\nEnter your choice: ");
 
             if (!int.TryParse(Console.ReadLine(), out choice))
             {
-                Console.WriteLine("\nInvalid input! Please enter a number between 1 and 9.");
+                Console.WriteLine("\nInvalid input ! Please enter the number between 1 and 9");
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 continue;
@@ -60,104 +60,101 @@ class Program
                     DeleteFile();
                     break;
                 case 9:
-                    Console.WriteLine("\nExiting application. Goodbye!");
+                    Console.WriteLine("\nExiting application. GoodBye!");
                     break;
                 default:
-                    Console.WriteLine("\nInvalid choice! Please choose between 1 and 9.");
+                    Console.WriteLine("\nInvalid Choice! Please choose between 1 and 9.");
                     break;
             }
-
             if (choice != 9)
             {
-                Console.WriteLine("\nPress any key to return to the menu...");
+                Console.WriteLine("\n Press any key to return to the menu...");
                 Console.ReadKey();
             }
+        }
+        while (choice != 9);
+        }
 
-        } while (choice != 9);
-    }
-
-    // 1. Create / Write File
-    static void CreateFile()
+    
+ static void CreateFile()
     {
-        string[] initialEmployees = {
+        string[] initialEmployees =
+        {
             "101,Arun,IT,35000",
             "102,Divya,HR,30000",
             "103,Kumar,Finance,40000",
             "104,Priya,IT,45000",
             "105,Ravi,Sales,28000"
         };
-
         File.WriteAllLines(filePath, initialEmployees);
-        Console.WriteLine("\nFile created and initial 5 employee records written successfully!");
+        Console.WriteLine("\nFile created and initial 5 employees records written successfully");
+
     }
 
-    // 2. Read / Display File
     static void DisplayFiles()
     {
-        if (!File.Exists(filePath))
+        if(!File.Exists(filePath))
         {
-            Console.WriteLine("\nFile does not exist! Please create the file first (Option 1).");
+            Console.WriteLine("\nFIles do not exit please create a file first");
             return;
         }
 
         string[] records = File.ReadAllLines(filePath);
-        if (records.Length == 0)
+        if(records.Length == 0)
         {
             Console.WriteLine("\nThe employee file is currently empty.");
             return;
         }
 
-        Console.WriteLine("\n--- Employee Records ---");
+        Console.WriteLine("\n ------- Employee records-----------");
         Console.WriteLine("ID\tName\tDepartment\tSalary");
-        Console.WriteLine("-----------------------------------");
+        Console.WriteLine("--------------------------------------");
 
-        foreach (string line in records)
-        {
+        foreach(string line in records)
+            {
             string[] parts = line.Split(',');
-            if (parts.Length == 4)
+            if(parts.Length == 4)
             {
                 Console.WriteLine($"{parts[0]}\t{parts[1]}\t{parts[2]}\t\t{parts[3]}");
             }
+
         }
     }
 
-    // 3. Append Data (Add Employees)
     static void AppendEmployee()
     {
-        if (!File.Exists(filePath))
+        if(!File.Exists(filePath))
         {
-            Console.WriteLine("\nFile does not exist! Creating file with default records first.");
+            Console.WriteLine("\nFile des not exit! Creating file with default records first.");
             CreateFile();
         }
-
-        string[] newEmployees = {
+        string[] newEmployees =
+        {
             "106,Sneha,Marketing,32000",
             "107,Rahul,Operations,38000"
         };
-
-        File.AppendAllLines(filePath, newEmployees);
-        Console.WriteLine("\n2 new employees added successfully!");
+        File.AppendAllLines(filePath,newEmployees);
+        Console.WriteLine("\n2 new employees added successfully");
     }
 
-    // 4. Search Employee
     static void SearchEmployee()
     {
-        if (!File.Exists(filePath))
+        if(!File.Exists(filePath))
         {
-            Console.WriteLine("\nFile does not exist!");
+            Console.WriteLine("\nFIle does not exist! ");
             return;
         }
 
-        Console.Write("\nEnter Employee ID to search: ");
+        Console.Write("\nEnter Employee ID to search :");
         string searchId = Console.ReadLine()?.Trim();
 
         string[] records = File.ReadAllLines(filePath);
         bool found = false;
 
-        foreach (string line in records)
+        foreach(string line in records)
         {
             string[] parts = line.Split(',');
-            if (parts.Length == 4 && parts[0] == searchId)
+            if(parts.Length == 4 && parts[0] == searchId)
             {
                 Console.WriteLine("\nEmployee Found");
                 Console.WriteLine($"ID: {parts[0]}");
@@ -168,87 +165,81 @@ class Program
                 break;
             }
         }
-
-        if (!found)
+        if(!found)
         {
             Console.WriteLine("\nEmployee Not Found");
         }
     }
 
-    // 5. Update Employee
     static void UpdateEmployee()
     {
-        if (!File.Exists(filePath))
+        if(!File.Exists(filePath))
         {
             Console.WriteLine("\nFile does not exist!");
             return;
         }
-
-        Console.Write("\nEnter Employee ID to update: ");
-        string updateId = Console.ReadLine()?.Trim();
+        Console.Write("\nEnter Employee ID  to update: ");
+        string updateID = Console.ReadLine()?.Trim();
 
         string[] records = File.ReadAllLines(filePath);
         bool found = false;
 
-        for (int i = 0; i < records.Length; i++)
+        for(int i = 0; i < records.Length; i++)
         {
             string[] parts = records[i].Split(',');
-            if (parts.Length == 4 && parts[0] == updateId)
+            if(parts.Length == 4 && parts[0] == updateID)
             {
-                Console.Write($"Current Department ({parts[2]}). Enter new Department: ");
+                Console.Write($"Current Department ({parts[2]}). ENter new Department:");
                 string newDept = Console.ReadLine()?.Trim() ?? parts[2];
 
-                Console.Write($"Current Salary ({parts[3]}). Enter new Salary: ");
+                Console.Write($"Current Salary ({parts[3]}). Enter new Salary");
                 string newSalary = Console.ReadLine()?.Trim() ?? parts[3];
 
-                // Reconstruct the updated line
+
                 records[i] = $"{parts[0]},{parts[1]},{newDept},{newSalary}";
                 found = true;
                 break;
-            }
+            }    
         }
 
-        if (found)
+        if(found)
         {
             File.WriteAllLines(filePath, records);
-            Console.WriteLine("\nEmployee record updated successfully!");
+            Console.WriteLine("\nEMployee records updated successfully!");
         }
         else
         {
-            Console.WriteLine("\nEmployee Not Found!");
+            Console.WriteLine("\nEmployee not Found!");
         }
     }
 
-    // 6. Delete Employee
     static void DeleteEmployee()
     {
-        if (!File.Exists(filePath))
+        if(!File.Exists(filePath))
         {
             Console.WriteLine("\nFile does not exist!");
             return;
         }
-
         Console.Write("\nEnter Employee ID to delete: ");
         string deleteId = Console.ReadLine()?.Trim();
 
         string[] records = File.ReadAllLines(filePath);
-        var updatedRecords = new System.Collections.Generic.List<string>();
+        var updatedRecords = new List<string>();
         bool found = false;
 
-        foreach (string line in records)
+        foreach(string line in records)
         {
             string[] parts = line.Split(',');
-            if (parts.Length == 4 && parts[0] == deleteId)
+            if(parts.Length == 4 && parts[0] == deleteId)
             {
-                found = true; // Skip adding this record back
+                found = true;
                 continue;
             }
             updatedRecords.Add(line);
         }
-
-        if (found)
+        if(found)
         {
-            File.WriteAllLines(filePath, updatedRecords);
+            File.WriteAllLines(filePath,updatedRecords);
             Console.WriteLine("\nEmployee deleted successfully!");
         }
         else
@@ -257,33 +248,30 @@ class Program
         }
     }
 
-    // 7. Check File Information
     static void ShowFileInfo()
     {
-        if (!File.Exists(filePath))
+        if(!File.Exists(filePath))
         {
             Console.WriteLine("\nFile does not exist!");
             return;
         }
-
-        Console.WriteLine("\n===== File Information =====");
-        Console.WriteLine($"File Exists: {File.Exists(filePath)}");
+        Console.WriteLine("\n======= File Information =======");
+        Console.WriteLine($"File Exists : {File.Exists(filePath)}");
         Console.WriteLine($"Creation Time: {File.GetCreationTime(filePath)}");
         Console.WriteLine($"Last Write Time: {File.GetLastWriteTime(filePath)}");
-        Console.WriteLine($"File Attributes: {File.GetAttributes(filePath)}");
+        Console.WriteLine($"File Attributes : {File.GetAttributes(filePath)}");
     }
 
-    // 8. Delete the File
     static void DeleteFile()
     {
-        if (File.Exists(filePath))
+        if(!File.Exists(filePath))
         {
             File.Delete(filePath);
             Console.WriteLine("\nFile 'employees.txt' has been successfully deleted.");
         }
         else
         {
-            Console.WriteLine("\nFile does not exist to delete.");
+            Console.WriteLine("\nFile does not exist to delete");
         }
     }
 }
